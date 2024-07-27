@@ -12,7 +12,8 @@ function createGoogleForm() {
 }
 
 function deleteAllSectionsAndQuestions() {
-  var formId = '1Ql5g61i1yS5rkOOgur4cMlegR00tX4CpDVExYhZC-00'; 
+  // var formId = '1Ql5g61i1yS5rkOOgur4cMlegR00tX4CpDVExYhZC-00';
+  var formId = '1Ql5g61i1yS5rkOOgur4cMlegR00tX4CpDVExYhZC-00';
   var form = FormApp.openById(formId);
   
   // Get all items from the form
@@ -26,10 +27,6 @@ function deleteAllSectionsAndQuestions() {
   
   Logger.log('All sections and questions have been deleted from the form.');
 }
-
-
-
-
 
 
 
