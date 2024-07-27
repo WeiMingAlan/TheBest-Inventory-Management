@@ -1,4 +1,4 @@
-function generateAndOpenPrefilledForm() {
+function myProfilePrefilledForm() {
   // Define the base URL of the form
   var baseUrl = 'https://docs.google.com/forms/d/1BzPH36u-C-S3nkwPIJIAIPKQDgAXM4EY9qzN5SlgnYc/viewform?usp=pp_url';
   
@@ -25,10 +25,8 @@ function generateAndOpenPrefilledForm() {
   prefilledUrl += '&entry.1481104569=' + encodeURIComponent(phone);
 
   Logger.log(prefilledUrl);
-
-
-  // Use a template to pass the prefilled URL to the HTML file
-  // var template = HtmlService.createTemplateFromFile('ShippingHTML');
-  // template.prefilledUrl = prefilledUrl;
-  // return template.evaluate();
+  return prefilledUrl;
 }
+
+
+

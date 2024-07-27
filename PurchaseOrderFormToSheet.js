@@ -1,4 +1,4 @@
-function onFormSubmit(e) {
+function onPurchaseOrderFormSubmit(e) {
   Logger.log("onFormSubmit function started");
 
   // Check if the event object is present
@@ -75,7 +75,7 @@ function onFormSubmit(e) {
   newSheet.getRange('Q4').setValue('Discount(%)').setFontWeight('bold');
   newSheet.getRange('R4').setValue('Discount Description').setFontWeight('bold');
 
-  newSheet.getRange('A2').setValue(new Date());
+  newSheet.getRange('A2').setValue(new Date().getTime());
   newSheet.getRange('A5').setValue(name);
   newSheet.getRange('B5').setValue(tin);
   newSheet.getRange('C5').setValue(rob);
@@ -106,19 +106,19 @@ function onFormSubmit(e) {
   Logger.log("Response written to new sheet: " + sheetName);
 }
 
-function setupTrigger() {
+function setupPurchaseFormTrigger() {
   Logger.log("Setting up trigger");
   const formId = '1P3Vhztca8IuIwFqdixhSOrdkx0Gbb7p72APWXjgC5ao';
   const form = FormApp.openById(formId);
 
   const triggers = ScriptApp.getUserTriggers(form);
   triggers.forEach(trigger => {
-    if (trigger.getHandlerFunction() === 'onFormSubmit') {
+    if (trigger.getHandlerFunction() === 'onPurchaseOrderFormSubmit') {
       ScriptApp.deleteTrigger(trigger);
     }
   });
 
-  ScriptApp.newTrigger('onFormSubmit')
+  ScriptApp.newTrigger('onPurchaseOrderFormSubmit')
     .forForm(form)
     .onFormSubmit()
     .create();
@@ -137,7 +137,7 @@ function testOnFormSubmit() {
       'Message': ['This is a test message']
     }
   };
-  onFormSubmit(mockEvent);
+  onPurchaseOrderFormSubmit(mockEvent);
   Logger.log("Test onFormSubmit completed");
 }
 
@@ -148,7 +148,7 @@ function removeAllSheets() {
   const sheets = spreadsheet.getSheets();
 
   sheets.forEach(sheet => {
-    if (sheet.getName() !== 'Sheet1') { // Change 'Sheet1' to the name of your default sheet
+    if (sheet.getName() !== 'My Profile') { // Change 'Sheet1' to the name of your default sheet
       spreadsheet.deleteSheet(sheet);
     }
   });

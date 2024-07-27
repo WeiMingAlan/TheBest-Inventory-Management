@@ -60,7 +60,7 @@ function onMyProfileFormSubmit(e) {
   Logger.log(`Response written to sheet: ${sheetName}`);
 }
 
-function setupTrigger() {
+function setupMyProfileTrigger() {
   Logger.log("Setting up trigger");
   const formId = '1BzPH36u-C-S3nkwPIJIAIPKQDgAXM4EY9qzN5SlgnYc';
   const form = FormApp.openById(formId);
