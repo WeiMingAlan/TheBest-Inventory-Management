@@ -25,8 +25,10 @@ function shippingListPrefilledForm() {
   prefilledUrl += '&entry.1784861253=' + encodeURIComponent(phone);
   prefilledUrl += '&entry.1863542548=NRIC';
   prefilledUrl += '&entry.2004026755=Malaysia';
-  prefilledUrl += '&entry.168708493=RM';
+  prefilledUrl += '&entry.168708493=RM+(Ringgit+Malaysia)';
 
   Logger.log(prefilledUrl);
   return prefilledUrl;
 }
+
+

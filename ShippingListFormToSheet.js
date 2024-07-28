@@ -29,7 +29,7 @@ function onShippingListFormSubmit(e) {
     return;
   }
 
-  const [name, tin, rob, msic, badesc, sst, ad1, ad2, ad3, city, pcode, country, state, email, phone, idType, idNum, bEmail, bAd1, bAd2, bAd3, bCity, bPcode, bCountry, bState, currency, ccode, proser, tariff, quantity, measurement, unitPrice, totalSale, discount, discountDesc] = responses;
+  const [name, tin, rob, msic, badesc, sst, ad, phone, idType, idNum, bEmail, bAd1, bAd2, bAd3, bCity, bPcode, bCountry, bState, currency, ccode, proser, tariff, quantity, measurement, unitPrice, totalSale, discount, discountDesc] = responses;
 
   // Open the specific Google Sheet by ID
   const spreadsheetId = '1NjIyOD73DLpO2ON7g4_YxwPFUviemb62KXyk_KlFKrQ';
@@ -57,12 +57,7 @@ function onShippingListFormSubmit(e) {
   newSheet.getRange('D5').setValue('MSIC Code').setFontWeight('bold');
   newSheet.getRange('E5').setValue('Business Activity Description').setFontWeight('bold');
   newSheet.getRange('F5').setValue('SST Registration Number').setFontWeight('bold');
-  newSheet.getRange('A8').setValue('Address').setFontWeight('bold');
-  newSheet.getRange('B8').setValue('City').setFontWeight('bold');
-  newSheet.getRange('C8').setValue('Postal Code').setFontWeight('bold');
-  newSheet.getRange('D8').setValue('Country').setFontWeight('bold');
-  newSheet.getRange('E8').setValue('State').setFontWeight('bold');
-  newSheet.getRange('F8').setValue('Email').setFontWeight('bold');
+  newSheet.getRange('A8').setValue('Branch Address').setFontWeight('bold');
   newSheet.getRange('G8').setValue('Phone Number').setFontWeight('bold');
 
   newSheet.getRange('A13').setValue('Buyer Information').setFontWeight('bold');
@@ -93,9 +88,7 @@ function onShippingListFormSubmit(e) {
   newSheet.getRange('D6').setValue(msic);
   newSheet.getRange('E6').setValue(badesc);
   newSheet.getRange('F6').setValue(sst);
-  newSheet.getRange('A9').setValue(ad1);
-  newSheet.getRange('A10').setValue(ad2);
-  newSheet.getRange('A11').setValue(ad3);
+  newSheet.getRange('A9').setValue(ad);
   newSheet.getRange('B9').setValue(city);
   newSheet.getRange('C9').setValue(pcode);
   newSheet.getRange('D9').setValue(country);

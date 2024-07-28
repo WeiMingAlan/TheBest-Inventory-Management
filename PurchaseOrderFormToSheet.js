@@ -126,21 +126,6 @@ function setupPurchaseFormTrigger() {
   Logger.log("Trigger created successfully");
 }
 
-function testOnFormSubmit() {
-  Logger.log("Test onFormSubmit started");
-  const mockEvent = {
-    values: ['2024-07-26 12:34:56', 'John Doe', 'john.doe@example.com', 'This is a test message'],
-    namedValues: {
-      'Timestamp': ['2024-07-26 12:34:56'],
-      'Name': ['John Doe'],
-      'Email': ['john.doe@example.com'],
-      'Message': ['This is a test message']
-    }
-  };
-  onPurchaseOrderFormSubmit(mockEvent);
-  Logger.log("Test onFormSubmit completed");
-}
-
 function removeAllSheets() {
   Logger.log("Removing all sheets");
   const spreadsheetId = '1s5efNqX5cpuHCYAyz_O1ugKJw1Mtykptf7jvlifNVn4';
@@ -154,4 +139,19 @@ function removeAllSheets() {
   });
 
   Logger.log("All sheets removed except the default one.");
+}
+
+function testOnFormSubmit() {
+  Logger.log("Test onFormSubmit started");
+  const mockEvent = {
+    values: ['2024-07-26 12:34:56', 'John Doe', 'john.doe@example.com', 'This is a test message'],
+    namedValues: {
+      'Timestamp': ['2024-07-26 12:34:56'],
+      'Name': ['John Doe'],
+      'Email': ['john.doe@example.com'],
+      'Message': ['This is a test message']
+    }
+  };
+  onPurchaseOrderFormSubmit(mockEvent);
+  Logger.log("Test onFormSubmit completed");
 }

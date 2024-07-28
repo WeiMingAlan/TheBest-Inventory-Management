@@ -79,3 +79,5 @@ function setupMyProfileTrigger() {
 
   Logger.log("Trigger created successfully");
 }
+
+
